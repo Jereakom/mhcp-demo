@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'FindProf';
+  search = 'Search';
+  about = 'About us';
+  legal = 'Legal Mumbo Jumbo';
+}
+
+export class FinnComponent {
+  title = 'Löydä Lääkäri';
+  search = 'haku';
+  about = 'Tietoa';
+  legal = 'Lailliset tiedot';
 }
