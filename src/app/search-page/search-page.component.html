@@ -1,3 +1,11 @@
-<p>
-  search-page works!
-</p>
+<section class="fields">
+  <input type="text" name="" value="" placeholder="Treatment">
+  <input type="text" name="" value="" placeholder="Body region">
+  <input type="text" name="" value="" placeholder="Location">
+  <div class="calendar">
+
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+  </div>
+</section>
