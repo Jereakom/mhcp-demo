@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
-import { AuthService } from "angular4-social-login";
+import { AuthService, SocialUser } from "angular4-social-login";
 import { FacebookLoginProvider, GoogleLoginProvider } from "angular4-social-login";
 
 
@@ -19,12 +19,10 @@ export class LoginComponent implements OnInit {
 
     signInWithFB(): void {
       this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-      console.log(this.user);
-    }
+      }
 
     signOut(): void {
       this.authService.signOut();
-      console.log(this.user);
     }
 
   ngOnInit() {
