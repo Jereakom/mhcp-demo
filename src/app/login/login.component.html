@@ -1,10 +1,10 @@
 
-<div *ngIf="this.authService._user" class="userInfo">
+<div *ngIf="this.user" class="userInfo">
   <img src="{{ user.photoUrl }}">
   <div>
     <h4>{{ user.name }}</h4>
     <p>{{ user.email }}</p>
   </div>
 </div>
-<button type="button" *ngIf="!this.authService._user" class="btn btn-primary" name="button" (click)="signInWithFB()">Sign in with FB</button>
-<button type="button" *ngIf="this.authService._user" class="btn btn-danger" name="button" (click)="signOut()">Sign out</button>
+<button type="button" *ngIf="!this.user" class="btn btn-primary" name="button" (click)="signInWithFB()">Sign in with FB</button>
+<button type="button" *ngIf="this.user" class="btn btn-danger" name="button" (click)="signOut()">Sign out</button>

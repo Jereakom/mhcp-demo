@@ -16,7 +16,7 @@ export class AppComponent {
   private loggedIn: boolean;
 
   loginStatus() {
-    console.log(this.authService._user);
+    console.log(this.user);
   }
 
   ngOnInit() {
