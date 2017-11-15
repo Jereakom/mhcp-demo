@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent, FinnComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { SearchPageComponent } from './search-page/search-page.component';
-import { MatDatepickerModule, MatNativeDateModule  } from '@angular/material';
+import { MatDatepickerModule, MatNativeDateModule, MatInputModule  } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import { MatDatepickerModule, MatNativeDateModule  } from '@angular/material';
     BrowserModule,
     AppRoutingModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

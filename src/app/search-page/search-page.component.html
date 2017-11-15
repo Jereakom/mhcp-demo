@@ -1,11 +1,48 @@
+<h2>Search for a physiotherapist</h2>
 <section class="fields">
-  <input type="text" name="" value="" placeholder="Treatment">
-  <input type="text" name="" value="" placeholder="Body region">
-  <input type="text" name="" value="" placeholder="Location">
-  <div class="calendar">
-
-      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
+  <div class="row">
+    <div class="col">
+      <input #treatment type="text" class="form-control" placeholder="Treatment">
+    </div>
+    <div class="col">
+      <select #bodypart class="form-control" name="">
+        <option value=""  disabled selected>Select a body part</option>
+        <option value="Head">Head</option>
+        <option value="Neck">Neck</option>
+        <option value="Body">Body</option>
+        <option value="Arms">Arms</option>
+        <option value="Legs">Legs</option>
+        <option value="Feet">Feet</option>
+      </select>
+    </div>
   </div>
+  <div class="row">
+    <div class="col">
+      <input #location type="text" class="form-control" placeholder="Location">
+    </div>
+    <div class="col">
+      <input class="form-control" #date matInput [matDatepicker]="picker" (click)="picker.open()" placeholder="Choose a date">
+      <mat-datepicker #picker></mat-datepicker>
+    </div>
+  </div>
+  <h6>Optional criteria</h6>
+  <div class="row">
+    <div class="col">
+      <input #sex type="text" class="form-control" name="" value="" placeholder="Sex">
+    </div>
+    <div class="col">
+      <input #age type="number" class="form-control" placeholder="Age" min="0" name="" value="">
+    </div>
+    <div class="col">
+      <input #languages type="text" class="form-control" placeholder="Languages" name="" value="">
+    </div>
+    <div class="col">
+      <input type="text" name="" class="form-control" value="" placeholder="Studies">
+    </div>
+    <div class="col">
+      <input type="text" name="" class="form-control" value="" placeholder="Experience">
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary" name="button" (click)="search(treatment. value, bodypart.value, location.value, date.value, sex.value, age.value, languages.value)">Search</button>
+
 </section>

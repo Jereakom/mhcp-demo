@@ -5,3 +5,6 @@
 .header{
   background-color: rgb(67, 141, 204);
 }
+.nav-item{
+  color: rgba(0, 0, 0, 0.5);
+}

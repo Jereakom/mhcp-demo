@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPageComponent implements OnInit {
 
+  search(treatment: string, bodypart: string, location: string, date: string, sex: string, age: number, languages: string) {
+    alert(" "+ treatment +" "+bodypart+" "+location+" "+date+ " "+sex+" "+age+" "+languages   );
+  }
+
   constructor() { }
 
   ngOnInit() {
