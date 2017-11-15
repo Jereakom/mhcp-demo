@@ -14,6 +14,9 @@ export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
 
+  private user: SocialUser;
+  private loggedIn: boolean;
+
     signInWithFB(): void {
       this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
     }
@@ -23,6 +26,10 @@ export class LoginComponent implements OnInit {
     }
 
   ngOnInit() {
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+      this.loggedIn = (user != null);
+    });
   }
 
 }
