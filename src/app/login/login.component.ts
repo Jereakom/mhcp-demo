@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
 
     signOut(): void {
       this.authService.signOut();
+      console.log(this.user);
     }
 
   ngOnInit() {
