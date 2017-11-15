@@ -10,6 +10,7 @@ export class AppComponent {
   search = 'Search';
   about = 'About us';
   legal = 'Legal Mumbo Jumbo';
+  login = 'Login';
 
 }
 
@@ -18,5 +19,5 @@ export class FinnComponent {
   search = 'haku';
   about = 'Tietoa';
   legal = 'Lailliset tiedot';
-
+  login = 'Kirjaudu'
 }

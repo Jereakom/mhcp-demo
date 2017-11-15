@@ -5,11 +5,13 @@ import { AppComponent, FinnComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { MatDatepickerModule, MatNativeDateModule, MatInputModule  } from '@angular/material';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
