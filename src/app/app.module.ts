@@ -7,17 +7,13 @@ import { SearchPageComponent } from './search-page/search-page.component';
 import { LoginComponent } from './login/login.component';
 
 import { SocialLoginModule, AuthServiceConfig } from "angular4-social-login";
-import { GoogleLoginProvider, FacebookLoginProvider } from "angular4-social-login";
+import { FacebookLoginProvider } from "angular4-social-login";
 import { MatDatepickerModule, MatNativeDateModule, MatInputModule  } from '@angular/material';
 
 let config = new AuthServiceConfig([
   {
-    id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider("Google-OAuth-Client-Id")
-  },
-  {
     id: FacebookLoginProvider.PROVIDER_ID,
-    provider: new FacebookLoginProvider("Facebook-App-Id")
+    provider: new FacebookLoginProvider("1513200888773244")
   }
 ]);
 
@@ -32,7 +28,8 @@ let config = new AuthServiceConfig([
     AppRoutingModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatInputModule
+    MatInputModule,
+    SocialLoginModule.initialize(config)
   ],
   providers: [],
   bootstrap: [AppComponent]
