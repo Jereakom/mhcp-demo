@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { SocialLoginModule, AuthServiceConfig } from "angular4-social-login";
 import { FacebookLoginProvider } from "angular4-social-login";
 import { MatDatepickerModule, MatNativeDateModule, MatInputModule  } from '@angular/material';
+import { ProfessionalViewComponent } from './professional-view/professional-view.component';
 
 let config = new AuthServiceConfig([
   {
@@ -21,7 +22,8 @@ let config = new AuthServiceConfig([
   declarations: [
     AppComponent,
     SearchPageComponent,
-    LoginComponent
+    LoginComponent,
+    ProfessionalViewComponent
   ],
   imports: [
     BrowserModule,
