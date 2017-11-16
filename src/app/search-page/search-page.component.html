@@ -1,6 +1,9 @@
 <h2>Search for a physiotherapist</h2>
 <section class="fields">
   <div class="row">
+    <div class="col-1">
+
+    </div>
     <div class="col">
       <input #treatment type="text" class="form-control" placeholder="Treatment">
     </div>
@@ -15,8 +18,12 @@
         <option value="Feet">Feet</option>
       </select>
     </div>
+    <div class="col-1">
+    </div>
   </div>
   <div class="row">
+    <div class="col-1">
+    </div>
     <div class="col">
       <input #location type="text" class="form-control" placeholder="Location">
     </div>
@@ -24,9 +31,14 @@
       <input class="form-control" #date matInput [matDatepicker]="picker" (click)="picker.open()" placeholder="Choose a date">
       <mat-datepicker #picker></mat-datepicker>
     </div>
+    <div class="col-1">
+
+    </div>
   </div>
   <h6>Optional criteria</h6>
   <div class="row">
+    <div class="col-1">
+    </div>
     <div class="col">
       <input #sex type="text" class="form-control" name="" value="" placeholder="Sex">
     </div>
@@ -41,6 +53,9 @@
     </div>
     <div class="col">
       <input type="text" name="" class="form-control" value="" placeholder="Experience">
+    </div>
+    <div class="col-1">
+
     </div>
   </div>
   <button type="button" class="btn btn-primary" name="button" (click)="search(treatment. value, bodypart.value, location.value, date.value, sex.value, age.value, languages.value)">Search</button>

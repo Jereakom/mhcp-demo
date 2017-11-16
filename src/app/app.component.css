@@ -1,8 +1,10 @@
 .footer{
+  margin-top: 1em;
   background-color: rgb(67, 141, 204);
 
 }
 .header{
+  margin-bottom: 1em;
   background-color: rgb(67, 141, 204);
 }
 .nav-item{
