@@ -31,11 +31,13 @@ export class AppComponent {
   about = 'About us';
   legal = 'Legal Mumbo Jumbo';
   login = 'Login';
+  professionals = 'Professionals';
 
   title_fi = 'Löydä Lääkäri';
   search_fi = 'haku';
   about_fi = 'Tietoa';
   legal_fi = 'Lailliset tiedot';
   login_fi = 'Kirjaudu'
+  professionals_fi = 'Ammattilaiset';
 
 }
