@@ -26,14 +26,14 @@ export class AppComponent {
     });
   }
 
-  title = 'FindProf';
+  title = 'Healthmatch';
   search = 'Search';
   about = 'About us';
   legal = 'Legal Mumbo Jumbo';
   login = 'Login';
   professionals = 'Professionals';
 
-  title_fi = 'Löydä Lääkäri';
+  title_fi = 'Hoitotori';
   search_fi = 'haku';
   about_fi = 'Tietoa';
   legal_fi = 'Lailliset tiedot';
