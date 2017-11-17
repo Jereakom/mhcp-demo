@@ -10,6 +10,7 @@ import { SocialLoginModule, AuthServiceConfig } from "angular4-social-login";
 import { FacebookLoginProvider } from "angular4-social-login";
 import { MatDatepickerModule, MatNativeDateModule, MatInputModule  } from '@angular/material';
 import { ProfessionalViewComponent } from './professional-view/professional-view.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 let config = new AuthServiceConfig([
   {
@@ -31,7 +32,8 @@ let config = new AuthServiceConfig([
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
-    SocialLoginModule.initialize(config)
+    SocialLoginModule.initialize(config),
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

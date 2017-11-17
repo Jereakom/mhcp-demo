@@ -5,9 +5,23 @@
     </div>
     <div class="col">
       <h1>Name</h1>
-      <h3></h3>
       <h3>Rating</h3>
       <h3>Specializations</h3>
+      <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+          <h4 class="modal-title">Additional information</h4>
+          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>One fine body&hellip;</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+        </div>
+      </ng-template>
+      <button type="button" class="btn btn-info" (click)="open(content)" name="button">See more</button>
     </div>
     <div class="col">
       <button type="button" class="btn btn-info" name="button">Book an appointment</button>
