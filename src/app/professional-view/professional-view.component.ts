@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
+import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-professional-view',
   templateUrl: './professional-view.component.html',
@@ -9,9 +11,11 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ProfessionalViewComponent implements OnInit {
 
-  closeResult: string
+  results: string[];
 
-  constructor(private modalService: NgbModal) { }
+  closeResult: string;
+
+  constructor(private modalService: NgbModal, private http: HttpClient) { }
 
   open(content) {
     this.modalService.open(content).result.then((result) => {
@@ -32,6 +36,10 @@ export class ProfessionalViewComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.http.get('http://localhost:3000/professionals').subscribe(data => {
+      this.results = data;
+      console.log(this.results[0]);
+    });
   }
 
 }
