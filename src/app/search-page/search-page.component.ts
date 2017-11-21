@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SearchPageComponent implements OnInit {
 
   search(treatment: string, bodypart: string, location: string, date: string, sex: string, age: number, languages: string) {
-    alert(" "+ treatment +" "+bodypart+" "+location+" "+date+ " "+sex+" "+age+" "+languages   );
+    console.log("treatment: "+ treatment +" bodypart: "+bodypart+" location: "+location+" date: "+date+ " sex: "+sex+" age: "+age+" languages: "+languages   );
   }
 
   constructor() { }

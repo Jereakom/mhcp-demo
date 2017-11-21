@@ -1,10 +1,10 @@
-<section>
+<section *ngFor="let professional of professionals">
   <div class="row">
     <div class="col">
-      <img src="http://via.placeholder.com/100x100" alt="">
+      <img [src]="professional.picture" alt="">
     </div>
     <div class="col">
-      <h1>Name</h1>
+      <h1>{{professional.firstName}} {{professional.lastName}}</h1>
       <h3>Rating</h3>
       <h3>Specializations</h3>
       <ng-template #content let-c="close" let-d="dismiss">
@@ -15,7 +15,9 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>One fine body&hellip;</p>
+          {{professional.languages}} |
+          {{professional.sex}} |
+          {{professional.age}}
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
@@ -24,7 +26,49 @@
       <button type="button" class="btn btn-info" (click)="open(content)" name="button">See more</button>
     </div>
     <div class="col">
-      <button type="button" class="btn btn-info" name="button">Book an appointment</button>
+      <button type="button" class="btn btn-info" (click)="open(appointment)" name="button">Book an appointment</button>
+      <ng-template #appointment let-c="close" let-d="dismiss">
+        <div class="modal-header">
+          <h4 class="modal-title">Available times</h4>
+          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Times available for {{dateSearched}}
+          <br>
+          <div class="form-group">
+            <select #time class="form-control" name="">
+              <option value="8 - 9 am">8 - 9 am</option>
+              <option value="9 - 10 am" >9 - 10 am</option>
+              <option value="10 - 11 am">10 - 11 am</option>
+              <option value="11 am - 12 pm">11 am - 12 pm</option>
+              <option value="12 - 1 pm">12 - 1 pm</option>
+              <option value="1 - 2 pm">1 - 2 pm</option>
+              <option value="2 - 3 pm">2 - 3 pm</option>
+              <option value="3 - 4 pm">3 - 4 pm</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" name="button" (click)="d('Close click');open(apptconfirm);book(time.value)">Book</button>
+          <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Cancel</button>
+        </div>
+      </ng-template>
+      <ng-template #apptconfirm let-c="close" let-d="dismiss">
+        <div class="modal-header">
+          <h4 class="modal-title">Appointment made!</h4>
+          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6>You have booked a time for {{professional.firstName}} {{professional.lastName}} at {{time}}</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Confirm</button>
+        </div>
+      </ng-template>
     </div>
   </div>
   <div class="row">

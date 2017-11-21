@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { Professional } from '../professional';
 
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-professional-view',
@@ -11,34 +12,31 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProfessionalViewComponent implements OnInit {
 
-  results: string[];
+  time: any;
+
+  professionals: Professional[];
+
+  dateSearched: any;
 
   closeResult: string;
 
   constructor(private modalService: NgbModal, private http: HttpClient) { }
 
   open(content) {
-    this.modalService.open(content).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
+    this.modalService.open(content)
   }
 
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
+  book(time: string){
+    this.time = time;
+    console.log(time);
   }
 
   ngOnInit() {
     this.http.get('http://localhost:3000/professionals').subscribe(data => {
-      this.results = data;
-      console.log(this.results[0]);
+
+      this.professionals = data;
+
+      console.log(this.results);
     });
   }
 
