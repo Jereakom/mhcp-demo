@@ -8,7 +8,9 @@ import { ProfessionalViewComponent} from './professional-view/professional-view.
 const routes: Routes = [
   { path: 'search', component: SearchPageComponent },
   { path: 'professionals', component: ProfessionalViewComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: '/search', pathMatch: 'full'},
+  { path: '**', redirectTo: '/search', pathMatch: 'full'},
 ];
 
 @NgModule({
