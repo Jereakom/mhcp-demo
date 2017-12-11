@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { Professional } from '../professional';
-
 
 @Component({
   selector: 'app-professional-view',
@@ -14,7 +12,7 @@ export class ProfessionalViewComponent implements OnInit {
 
   time: any;
 
-  professionals: Professional[];
+  professionals: any;
 
   dateSearched: any;
 
@@ -36,7 +34,7 @@ export class ProfessionalViewComponent implements OnInit {
 
       this.professionals = data;
 
-      console.log(this.results);
+      console.log(data);
     });
   }
 
